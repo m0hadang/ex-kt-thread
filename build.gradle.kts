@@ -22,9 +22,6 @@ repositories {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-core-jvm")
-    implementation("io.ktor:ktor-server-netty")
-
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
 
     // logger

@@ -7,7 +7,7 @@
     <root level="debug">
         <appender-ref ref="stdout" />
     </root>
-<!--      <logger name="service" level="debug">-->
+<!--      <logger name="model" level="debug">-->
 <!--        <appender-ref ref="stdout" />-->
 <!--      </logger>-->
 </configuration>
