@@ -7,15 +7,15 @@ import kotlin.concurrent.thread
 private val logger = KotlinLogging.logger {}
 
 private fun subA() {
-    logger.debug { "start A" }
+    logger.debug("start A")
     sleep(1000)
-    logger.debug { "end A" }
+    logger.debug("end A")
 }
 
 private fun subB() {
-    logger.debug { "start B" }
+    logger.debug("start B")
     sleep(1000)
-    logger.debug { "end B" }
+    logger.debug("end B")
 }
 
 fun main() {
