@@ -1,11 +1,9 @@
 package com.example
 
-import io.ktor.server.application.*
+import mu.KotlinLogging
+
+val logger = KotlinLogging.logger {}
 
 fun main(args: Array<String>) {
-    io.ktor.server.netty.EngineMain.main(args)
-}
-
-fun Application.module() {
-    configureRouting()
+    logger.info("Hello, World!")
 }
