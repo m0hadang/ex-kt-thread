@@ -1,4 +1,4 @@
-package com.example.service
+package com.example.model
 
 import mu.KotlinLogging
 import java.lang.Thread.sleep
