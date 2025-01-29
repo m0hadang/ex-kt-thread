@@ -1,9 +1,6 @@
 package com.example.model
 
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import mu.KotlinLogging
 import java.lang.Thread.sleep
 import java.util.concurrent.CompletableFuture

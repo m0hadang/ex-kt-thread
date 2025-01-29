@@ -49,7 +49,9 @@ suspend fun main() {
 private suspend fun firstJobNonBlocking(scopeNum: Long) {
     logger.debug("[$scopeNum] start First job")
     repeat(3) {
-        delay(1_000)// not io
+        // not blocking io
+        // suspend job and return worker to ForkJoinPool
+        delay(1_000)
         logger.debug("[$scopeNum] delay First job...")
     }
     logger.debug("[$scopeNum] end First job")
@@ -58,7 +60,9 @@ private suspend fun firstJobNonBlocking(scopeNum: Long) {
 private fun firstJobBlocking(scopeNum: Long) {
     logger.debug("[$scopeNum] start First job")
     repeat(3) {
-        sleep(1_000)// blocking
+        // blocking io.
+        // hold(lock) worker. worker is not returned to ForkJoinPool
+        sleep(1_000)
         logger.debug("[$scopeNum] sleep First job...")
     }
     logger.debug("[$scopeNum] end First job")
