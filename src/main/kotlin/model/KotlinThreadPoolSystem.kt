@@ -1,5 +1,9 @@
 package com.example.model
 
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import mu.KotlinLogging
 import java.lang.Thread.sleep
 import java.util.concurrent.CompletableFuture
@@ -17,6 +21,11 @@ private fun completableFuture(): CompletableFuture<Unit> {
     }
 }
 
+private suspend fun coroutineJob() {
+    delay(500)
+    logger.debug("coroutine")
+}
+
 fun main(args: Array<String>) {
 
     // using common pool
@@ -32,5 +41,6 @@ fun main(args: Array<String>) {
             logger.debug("$it")
         }
     }.join()
+
     logger.info("==> END")
 }

@@ -82,3 +82,23 @@
 01:31.142|INFO |main|c.e.m.KotlinThreadPoolSystemKt.main|==> END
 ```
 
+[SingleThreadPerformance.kt](src/main/kotlin/performance/SingleThreadPerformance.kt)
+- single thread. not lock.
+- 12 ms
+```log
+56:50.859|DEBUG|main|c.e.p.SingleThreadPerformanceKt.main|sum: 2000000 elapsed: 12 ms
+```
+
+[MultiThreadPerformance.kt](src/main/kotlin/performance/MultiThreadPerformance.kt)
+- multi thread. lock.
+- 144 ms
+```log
+57:29.222|DEBUG|main|c.e.p.MultiThreadPerformanceKt.main|sum: 2000000 elapsed: 144 ms
+```
+
+[CoroutinePerformance.kt](src/main/kotlin/performance/CoroutinePerformance.kt)
+- coroutine. lock.
+- 46 ms
+```log
+59:09.098|DEBUG|DefaultDispatcher-worker-1|c.e.p.CouritinePerformanceKt$main$1$1.invokeSuspend|sum: 2000000 elapsed: 46 ms
+```
