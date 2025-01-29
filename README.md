@@ -1,5 +1,6 @@
-[AsyncNonBlockingModel.kt](src/main/kotlin/model/AsyncNonBlockingModel.kt)
+[CreateThreadModel.kt](src/main/kotlin/model/CreateThreadModel.kt)[AsyncNonBlockingModel.kt](src/main/kotlin/model/AsyncNonBlockingModel.kt)
 - async/non-blocking model
+- always create thread
 ```log
 01:09.339|DEBUG|Thread-1|c.e.m.AsyncNonBlockingModelKt.subB|start B
 01:09.339|DEBUG|Thread-0|c.e.m.AsyncNonBlockingModelKt.subA|start A
