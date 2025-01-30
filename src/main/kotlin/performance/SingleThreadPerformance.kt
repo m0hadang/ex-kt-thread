@@ -1,9 +1,6 @@
 package com.example.performance
 
 import mu.KotlinLogging
-import java.util.concurrent.CountDownLatch
-import java.util.concurrent.atomic.AtomicLong
-import kotlin.concurrent.thread
 import kotlin.system.measureTimeMillis
 
 private val logger = KotlinLogging.logger {}
@@ -19,4 +16,5 @@ fun main() {
     }.let {
         logger.debug("sum: $sum elapsed: $it ms")
     }
+    logger.info("==> END")
 }

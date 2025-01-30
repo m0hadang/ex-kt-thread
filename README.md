@@ -82,23 +82,68 @@
 01:31.142|INFO |main|c.e.m.KotlinThreadPoolSystemKt.main|==> END
 ```
 
+[BasicModel.kt](src/main/kotlin/model/coroutine/BasicModel.kt)
+- coroutine basic model
+```log
+59:49.448|DEBUG|main|c.e.m.c.BasicModelKt$main$1.invokeSuspend|Hello World! 0
+59:50.463|DEBUG|main|c.e.m.c.BasicModelKt$main$1$2.invokeSuspend|Hello World! 2
+59:51.468|DEBUG|main|c.e.m.c.BasicModelKt$main$1$1.invokeSuspend|Hello World! 1
+59:52.463|DEBUG|main|c.e.m.c.BasicModelKt$main$1$job$1.invokeSuspend|Hello World! Finish!
+59:52.466|DEBUG|main|c.e.m.c.BasicModelKt$main$1.invokeSuspend|Every Body!
+```
+
+[SuspendModel.kt](src/main/kotlin/model/coroutine/SuspendModel.kt)
+- coroutine suspend model
+```log
+12:44.073|DEBUG|main|c.e.m.c.SuspendModelKt$suspendFunction$2.invokeSuspend|Hello World! 0
+12:45.086|DEBUG|main|c.e.m.c.SuspendModelKt$suspendFunction$2$2.invokeSuspend|Hello World! 2
+12:46.081|DEBUG|main|c.e.m.c.SuspendModelKt$suspendFunction$2$1.invokeSuspend|Hello World! 1
+12:46.083|INFO |main|c.e.m.c.SuspendModelKt.main|==> END
+```
+
+[ComposingSuspendingModel.kt](src/main/kotlin/model/coroutine/ComposingSuspendingModel.kt)
+- coroutine composing suspending model
+```log
+11:56.354|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt.doJob1|doJob1 start
+11:57.377|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt.doJob2|doJob2 start
+11:58.393|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt$main$1.invokeSuspend|[sequentially] after job start
+11:58.393|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt$main$1.invokeSuspend|[sequentially] The answer is 42
+11:58.401|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt$main$1.invokeSuspend|[sequentially] Completed in 2039 ms
+11:58.403|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt$main$2.invokeSuspend|[async] after job start
+11:58.403|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt.doJob1|doJob1 start
+11:58.403|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt.doJob2|doJob2 start
+11:59.410|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt$main$2.invokeSuspend|[async] The answer is 42
+11:59.410|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt$main$2.invokeSuspend|[async] Completed in 1009 ms
+11:59.410|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt$main$3.invokeSuspend|[lazy] before job start
+11:59.410|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt.doJob1|doJob1 start
+11:59.410|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt.doJob2|doJob2 start
+12:00.425|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt$main$3.invokeSuspend|[lazy] The answer is 42
+12:00.428|DEBUG|main|c.e.m.c.ComposingSuspendingModelKt$main$3.invokeSuspend|[lazy] Completed in 1018 ms
+12:00.428|INFO |main|c.e.m.c.ComposingSuspendingModelKt.main|==> END
+```
+
 [SingleThreadPerformance.kt](src/main/kotlin/performance/SingleThreadPerformance.kt)
 - single thread. not lock.
 - 12 ms
 ```log
-56:50.859|DEBUG|main|c.e.p.SingleThreadPerformanceKt.main|sum: 2000000 elapsed: 12 ms
+13:31.158|DEBUG|main|c.e.p.SingleThreadPerformanceKt.main|sum: 2000000 elapsed: 12 ms
+13:31.158|INFO |main|c.e.p.SingleThreadPerformanceKt.main|==> END
+
 ```
 
 [MultiThreadPerformance.kt](src/main/kotlin/performance/MultiThreadPerformance.kt)
 - multi thread. lock.
 - 144 ms
 ```log
-57:29.222|DEBUG|main|c.e.p.MultiThreadPerformanceKt.main|sum: 2000000 elapsed: 144 ms
+14:00.237|DEBUG|main|c.e.p.MultiThreadPerformanceKt.main|sum: 2000000 elapsed: 164 ms
+14:00.239|INFO |main|c.e.p.MultiThreadPerformanceKt.main|==> END
+
 ```
 
 [CoroutinePerformance.kt](src/main/kotlin/performance/CoroutinePerformance.kt)
 - coroutine. lock.
 - 46 ms
 ```log
-59:09.098|DEBUG|DefaultDispatcher-worker-1|c.e.p.CouritinePerformanceKt$main$1$1.invokeSuspend|sum: 2000000 elapsed: 46 ms
+14:30.227|DEBUG|DefaultDispatcher-worker-1|c.e.p.CoroutinePerformanceKt$main$1$1.invokeSuspend|sum: 2000000 elapsed: 71 ms
+14:30.242|INFO |main|c.e.p.CoroutinePerformanceKt.main|==> END
 ```

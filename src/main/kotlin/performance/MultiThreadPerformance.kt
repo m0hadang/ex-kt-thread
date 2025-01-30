@@ -25,4 +25,5 @@ fun main() {
     }.let {
         logger.debug("sum: $sum elapsed: $it ms")
     }
+    logger.info("==> END")
 }

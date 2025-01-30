@@ -49,7 +49,7 @@ suspend fun main() {
 private suspend fun firstJobNonBlocking(scopeNum: Long) {
     logger.debug("[$scopeNum] start First job")
     repeat(3) {
-        // not blocking io
+        // non-blocking io
         // suspend job and return worker to ForkJoinPool
         delay(1_000)
         logger.debug("[$scopeNum] delay First job...")
